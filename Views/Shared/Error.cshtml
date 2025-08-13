@@ -1,0 +1,22 @@
+@model Microsoft.AspNetCore.Diagnostics.ExceptionHandlerFeature
+@{
+    ViewData["Title"] = "Oops! Something went wrong";
+    var exception = Model?.Error;
+}
+
+<div class="container mt-5">
+    <div class="text-center">
+        <h1 class="display-4 text-danger">⚠️ An error occurred</h1>
+        <p class="lead">We’re sorry, but something went wrong.</p>
+        <p>Please try again later or <a href="/">return to home</a>.</p>
+        
+        @if (exception != null)
+        {
+            <details style="margin-top:20px;">
+                <summary>Technical details (dev mode)</summary>
+                <pre>@exception.Message</pre>
+                <pre>@exception.StackTrace</pre>
+            </details>
+        }
+    </div>
+</div>

@@ -1,0 +1,78 @@
+@model IEnumerable<OnlineGallery.Models.Image>
+@{
+    ViewData["Title"] = "Image Gallery";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4 fw-bold">Image Gallery</h2>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info text-center shadow-sm">
+            No images found.
+        </div>
+    }
+    else
+    {
+        <div class="row g-4">
+            @foreach (var img in Model)
+            {
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card h-100 border-0 shadow-sm gallery-card">
+                        <a href="@img.ImageUrl" target="_blank" class="image-link">
+                            <img src="@img.ImageUrl"
+                                 class="card-img-top img-fluid rounded-top"
+                                 alt="@img.Description"
+                                 loading="lazy"
+                                 style="object-fit: cover; height: 220px;">
+                        </a>
+                        <div class="card-body d-flex flex-column">
+                            <h6 class="card-title text-truncate fw-semibold">@img.Description</h6>
+                            <p class="card-text mb-1 text-muted small">
+                                Uploaded by: <span class="fw-medium">@img.UploadedBy</span>
+                            </p>
+                            <small class="text-muted mb-2">
+                                @img.UploadedAt.ToString("MMM dd, yyyy")
+                            </small>
+                            <div class="mt-auto d-flex gap-2">
+                                <a href="@Url.Action("Download", "Gallery", new { key = img.StorageKey })"
+                                   class="btn btn-outline-primary btn-sm w-100">
+                                    <i class="bi bi-download"></i> Download
+                                </a>
+                                <a href="@img.ImageUrl" target="_blank"
+                                   class="btn btn-outline-secondary btn-sm w-100">
+                                    <i class="bi bi-eye"></i> View
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
+
+<style>
+    .gallery-card {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .gallery-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+    .image-link {
+        display: block;
+        overflow: hidden;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+    }
+    .image-link img {
+        transition: transform 0.3s ease;
+    }
+    .image-link:hover img {
+        transform: scale(1.05);
+    }
+</style>
+
+<!-- Bootstrap Icons (if not already included in _Layout.cshtml) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">

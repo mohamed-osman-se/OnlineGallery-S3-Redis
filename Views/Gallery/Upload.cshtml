@@ -1,0 +1,38 @@
+@model OnlineGallery.DTOs.ImageDto
+@{
+    ViewData["Title"] = "Upload Image";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-sm p-4">
+        <h2 class="mb-4 text-center">Upload Image</h2>
+
+      <form asp-action="Upload" asp-controller="Gallery" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label asp-for="Description" class="form-label">Description</label>
+                <input asp-for="Description" class="form-control" placeholder="Write a short description..." />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="UploadedBy" class="form-label">Uploaded By</label>
+                <input asp-for="UploadedBy" class="form-control" placeholder="Your name or username" />
+                <span asp-validation-for="UploadedBy" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Select Image</label>
+                <input type="file" name="imageFile" class="form-control" accept="image/*" required />
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary px-5">Upload</button>
+                <a asp-action="Index" asp-controller="Gallery" class="btn btn-secondary px-4 ms-2">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
