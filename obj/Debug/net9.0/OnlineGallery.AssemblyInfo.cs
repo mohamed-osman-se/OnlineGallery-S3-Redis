@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OnlineGallery")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b7085dbceb931f80037f8e7631ffeec081030616")]
 [assembly: System.Reflection.AssemblyProductAttribute("OnlineGallery")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OnlineGallery")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
