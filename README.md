@@ -5,7 +5,7 @@
 ---
 
 ## 🧠 About the Project
-**Online Gallery** is a ** ASP.NET Core MVC web application** that allows users to upload and view images — with a backend optimized for performance.
+**Online Gallery** is a **ASP.NET Core MVC** web application that allows users to upload and view images — with a backend optimized for performance.
 
 I built this project to **showcase my backend development skills** in designing and deploying modern web applications that integrate cloud storage, caching, and containerized deployments.
 
