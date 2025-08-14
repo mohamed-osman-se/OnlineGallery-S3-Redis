@@ -33,12 +33,8 @@ This project reflects :
 
 ---
 
-## 📊 Performance Improvement
-Before Redis: **75**  
-After Redis: **91**  
-*(Measured with Google Lighthouse)*
-
-![Performance Chart](https://via.placeholder.com/800x300?text=Performance+Before+vs+After+Redis)
+## screenshots
+<img width="1289" height="695" alt="Screenshot from 2025-08-14 12-18-34" src="https://github.com/user-attachments/assets/e50586a4-de3c-4a7e-a8cf-0b0c20e3e084" />
 
 ---
 
